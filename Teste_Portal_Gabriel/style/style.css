@@ -1,0 +1,126 @@
+*{
+    margin: 0vw;
+    padding: 0vw;
+}
+header{
+    text-align: center;
+}
+table thead th p{
+    font-size: 25px;
+    text-emphasis: bold;
+}
+#content{
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 2vh;  
+    background: #5AC8FF;
+    float: left;
+    border: 2px solid #529CFF;
+    border-radius: 30px; 
+}
+#register_product , #pl_div{
+    float: left;
+    width: 40%;
+    margin-left:5vw;
+    margin-top: 2vw; 
+}
+#register_order{
+    float: right;
+    width: 40%;
+    margin-right: 5vw;
+    margin-top: 2vw; 
+}
+.reg_table tbody tr td input{
+    width: 100%;
+    padding: 3px;
+    margin: 0px
+}
+.reg_table tbody tr td{
+    width: 10vw;
+    padding-top:1vh;
+    padding-bottom: 1vh; 
+}
+.reg_table thead tr th{
+    text-align: center;
+}
+.reg_table_input{
+    width: 100%;
+}
+#pl_div{
+    width: 40%;
+    margin: 1vh 30%;
+}
+#pl thead tr th{
+    text-align: center;
+    padding: 5px;
+}
+#pl tbody tr td {
+    font-size: 20px;
+    text-align: center;
+}
+#result_orders{
+    float: left
+}
+#pl th{
+    width: 25%;
+}
+#pl td{
+    width:25%; 
+}
+#pl tbody {
+    height: 130px;
+    overflow-y: auto;
+    width: 100%
+   
+}
+#pl thead , #pl tbody, #pl tr , #pl tr , #pl td, #pl th{
+    display: block;
+}
+#pl tbody td,#pl tbody th, #pl thead > tr> th {
+    float: left;
+    border-bottom-width: 0;
+  }
+#search_orders{
+    width:100%;
+
+    margin-left:2vw ;
+}
+#search_orders td, #search_orders th{
+    border-top:0px;
+    border-bottom: 0px;
+    width: 25%;
+    text-align: center;
+    
+}
+#search_orders input{
+    width: 100%;
+}
+#orders_table{
+    width: 100%;
+    margin-left:2vw;
+}
+#orders_table th{
+    width: 20%;
+}
+#orders_table td{
+    width:20%; 
+}
+#orders_table tbody {
+    height: 130px;
+    overflow-y: auto;
+    width: 100%
+   
+}
+#orders_table thead , #orders_table tbody, #orders_table tr , #orders_table tr , #orders_table td, #orders_table th{
+    display: block;
+}
+#orders_table tbody td,#orders_table tbody th, #orders_table thead > tr> th {
+    float: left;
+    border-bottom-width: 0;
+}
+#h3_order {
+    width: 100%;
+}
+footer{
+    text-align: center;
+}
