@@ -49,6 +49,7 @@ table thead th p{
 #pl_div{
     width: 40%;
     margin: 1vh 30%;
+    text-align: center;
 }
 #pl thead tr th{
     text-align: center;
@@ -59,7 +60,9 @@ table thead th p{
     text-align: center;
 }
 #result_orders{
-    float: left
+    float: left;
+    text-align:center;
+    margin-left: 2vw;
 }
 #pl th{
     width: 25%;
@@ -82,8 +85,7 @@ table thead th p{
   }
 #search_orders{
     width:100%;
-
-    margin-left:2vw ;
+    
 }
 #search_orders td, #search_orders th{
     border-top:0px;
@@ -97,7 +99,7 @@ table thead th p{
 }
 #orders_table{
     width: 100%;
-    margin-left:2vw;
+    
 }
 #orders_table th{
     width: 20%;
