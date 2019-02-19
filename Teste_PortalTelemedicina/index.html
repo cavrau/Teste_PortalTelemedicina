@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" href="style.css">
+            <title>Products & Orders</title>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </head>
+        <body>
+            <header>
+                <h2>Products&Orders</h2>
+            </header>
+            <div id="content">
+                <form>
+                    <table class="reg_table" id="register_product">
+                        <thead>
+                            <tr>
+                                <th colspan="2">
+                                    <p>
+                                        Product Registration
+                                    </p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label>Name : </label>
+                                </td>
+                                <td class="reg_table_input">
+                                    <input class="form-control" type="text" id="txt_Pname">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Price : </label>
+                                </td>
+                                <td class="reg_table_input">
+                                <input class="form-control" type="text" id="txt_Pprice">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="btn btn-primary" onclick="createProduct()">Submit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <form >
+                <table class="reg_table" id="register_order">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <p>
+                                    Order Registration
+                                </p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label>Product : </label>
+                            </td>
+                            <td class="reg_table_input">
+                                <input class="form-control" id="listProducts" list="dlProducts">
+                                <datalist id="dlProducts"></datalist>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Quantity : </label>
+                            </td>
+                            <td class="reg_table_input">
+                                <input class="form-control" type="text" id="txt_Oquantity">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button type="button" class="btn btn-primary" onclick="createOrder()">Submit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div id="pl_div">
+                <table  id="pl" class="table  table-hover table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                <p> Name </p>
+                            </th>
+                            <th scope="col">
+                                <p> Price </p>
+                            </th>
+                            <th>
+                                <p>Actions</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="productBody"></tbody>
+                </table>
+            </div>
+            <div id="result_orders">
+                <form >
+                    <table class="table " id="search_orders">
+                        <thead>
+                            <tr>
+                                <th colspan="2">
+                                    <p>Values</p>
+                                </th>
+                                <th colspan="2">
+                                    <p>Date</p>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><label>Min price : </label></td>
+                                <td><label>Max price : </label></td>
+                                <td><label> From : </label></td>
+                                <td><label> To : </label></td>
+                            </tr>
+                            <tr>
+                                <td><input class="form-control" type="text" id="txt_MinPrice" oninput="search()"></td>
+                                <td><input class="form-control" type="text" id="txt_MaxPrice" oninput="search()"></td>
+                                <td><input class="form-control" type="date" id="dt_MinDate" oninput="search()"></td>
+                                <td><input class="form-control" type="date" id="dt_MaxDate" oninput="search()"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <table id="orders_table" class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                <p> Product </p>
+                            </th>
+                            <th>
+                                <p> Quantity </p>
+                            </th>
+                            <th>
+                                <p> Unitary Price </p>
+                            </th>
+                            <th>
+                                <p> Total Price </p>
+                            </th>
+                            <th>
+                                <p> Date </p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="OrdersBody"></tbody>
+                </table>
+            </div>
+        </div>
+        <footer>
+            <h6>Made by Gabriel Aristeu Cabral for the Portal Telemedicina Task</h6>
+        </footer>
+        <div class="modal fade" id="update_modal" tabindex="-1" role="dialog"  aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="update_modal_title">Update</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form >
+                        <table class="table table-hover ">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label> Name : </label>
+                                </td>
+                                <td>
+                                    <input class="form-control" id="txt_up_name" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label>
+                                         Price :
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="text" id="txt_up_price" class="form-control">
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <input type="hidden" id="hd_name">
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" data-dissmiss="modal" onclick="recreateProduct()">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <script src="Operations.js"></script>
+    </body>
+</html>
